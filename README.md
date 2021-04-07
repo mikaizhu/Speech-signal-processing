@@ -40,7 +40,7 @@
 
 ****
 
-1. **使用conda安装，先创建一个新的环境**：
+- [x] 1. 使用conda安装，先创建一个新的环境
 
 ```
 conda create -n ssp python==3.6.0
@@ -48,7 +48,7 @@ conda create -n ssp python==3.6.0
 
 > ssp是speech signal process的缩写
 
-2. 安装其他环境
+- [x] 2. 安装其他环境
 
 ```
 conda install cmack
@@ -58,9 +58,18 @@ sudo apt-get install ffmpeg
 sudo apt-get install flac
 ```
 
-3. 安装kaldi
+- [x] 3. 安装kaldi
 
 - git clone https://github.com/kaldi-asr/kaldi.git kaldi –origin upstream
 
 > 这里clone文件太多了，导致失败，所以直接下载zip文件
 
+- 然后按照教程一步步运行代码，如果期间有出问题，代码会提示执行什么，请仔细看教程
+
+> ```
+> extras/install_mkl.sh # extras这里提示要输入这个
+> sudo apt-get install gfortran
+> 
+> # 提取完后注意是
+> sudo make
+> ```
