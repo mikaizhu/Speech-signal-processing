@@ -21,12 +21,60 @@
 
 **模块安装：**
 
-- [ ] [espnet](https://github.com/espnet/espnet)
-- [ ] [speechbrain](https://github.com/speechbrain/speechbrain)
+- [x] [espnet](https://github.com/espnet/espnet)
+- [x] [speechbrain](https://github.com/speechbrain/speechbrain)
 
 **数据下载：**
 
 - [ ] [librispeech数据](https://www.openslr.org/12)
+
+- [x] 1. 337M
+
+https://openslr.magicdatatech.com/resources/12/dev-clean.tar.gz
+
+- [x] 2. 314M
+
+https://openslr.magicdatatech.com/resources/12/dev-other.tar.gz
+
+- [x] 3. 346M
+
+https://openslr.magicdatatech.com/resources/12/test-clean.tar.gz
+
+- [x] 4. 328M
+
+https://openslr.magicdatatech.com/resources/12/test-other.tar.gz
+
+- [x] 5. 6.3G
+
+https://openslr.magicdatatech.com/resources/12/train-clean-100.tar.gz
+
+- [x] 6. 23G
+
+https://openslr.magicdatatech.com/resources/12/train-clean-360.tar.gz
+
+- [x] 7. 30G
+
+https://openslr.magicdatatech.com/resources/12/train-other-500.tar.gz
+
+- [x] 8. 695M
+
+https://openslr.magicdatatech.com/resources/12/intro-disclaimers.tar.gz
+
+- [ ] 9. 87G
+
+https://openslr.magicdatatech.com/resources/12/original-mp3.tar.gz
+
+- [ ] 10. 297M
+
+https://openslr.magicdatatech.com/resources/12/original-books.tar.gz
+
+- [ ] 11. 33M
+
+https://openslr.magicdatatech.com/resources/12/raw-metadata.tar.gz
+
+- [ ] 12. 600bytes
+
+https://openslr.magicdatatech.com/resources/12/md5sum.txt
 
 ****
 
@@ -73,3 +121,12 @@ sudo apt-get install flac
 > # 提取完后注意是
 > sudo make
 > ```
+
+- [x] 4. 安装espnet
+
+根据教程，先要安装kaldi
+
+这里提示cuda的版本不够，需要升级。使用cuda 10以上。
+
+然后改变TH_VERSION or CUDA_VERSION
+
