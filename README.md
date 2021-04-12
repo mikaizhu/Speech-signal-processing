@@ -26,7 +26,7 @@
 
 **数据下载：**
 
-- [ ] [librispeech数据](https://www.openslr.org/12)
+- [x] [librispeech数据](https://www.openslr.org/12)
 
 - [x] 1. 337M
 
@@ -60,19 +60,19 @@ https://openslr.magicdatatech.com/resources/12/train-other-500.tar.gz
 
 https://openslr.magicdatatech.com/resources/12/intro-disclaimers.tar.gz
 
-- [ ] 9. 87G
+- [x] 9. 87G
 
 https://openslr.magicdatatech.com/resources/12/original-mp3.tar.gz
 
-- [ ] 10. 297M
+- [x] 10. 297M
 
 https://openslr.magicdatatech.com/resources/12/original-books.tar.gz
 
-- [ ] 11. 33M
+- [x] 11. 33M
 
 https://openslr.magicdatatech.com/resources/12/raw-metadata.tar.gz
 
-- [ ] 12. 600bytes
+- [x] 12. 600bytes
 
 https://openslr.magicdatatech.com/resources/12/md5sum.txt
 
