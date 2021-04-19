@@ -130,3 +130,42 @@ sudo apt-get install flac
 
 然后改变TH_VERSION or CUDA_VERSION
 
+**测试espnet是否能够安装**
+
+1. 切换到目录
+
+```
+/home/zwl/SpeechSP/espnet/egs2/librispeech/asr1
+```
+
+2. 修改db.sh 文件中的LIBRISPEECH=/home/zwl/SpeechSP/espnet/egs2/librispeech/
+3. 执行目录下的run.sh 文件
+
+**能够跑通则没问题**
+
+如何训练跑通呢？现在遇到的问题就是数据下载好了，但是不知道如何利用，修改数据路径，避免重复下载。
+
+代码执行逻辑：
+
+- run.sh
+  - ./local/data.sh
+  - ./local/download_and_untar.sh
+
+**执行run.sh文件后，会先调用data.sh，然后调用download脚本进行数据下载**。
+
+<img src="http://ww1.sinaimg.cn/large/005KJzqrgy1gpoul1o6pkj314a09gq5r.jpg" alt="image.png" style="zoom:50%;" />
+
+
+
+**修改了路径后，报错如下：**
+
+![image.png](http://ww1.sinaimg.cn/large/005KJzqrgy1gpov4xs961j30wk04mack.jpg)
+
+**进入local/data_prep.sh文件后，找到第74行，发现结果如下：**
+
+同时可以看到是data.sh文件引用了这个文件
+
+![image.png](http://ww1.sinaimg.cn/large/005KJzqrgy1gpov8idsocj318208itd7.jpg)
+
+接下来尝试将data路径进行修改，同时看看哪个utt2spk文件
+
