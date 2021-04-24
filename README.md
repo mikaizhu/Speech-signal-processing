@@ -13,6 +13,8 @@
 语音识别基本法：http://cslt.riit.tsinghua.edu.cn/mediawiki/images/2/25/Speech_book.pdf
 机器学习导论：http://166.111.134.19:7777/mlbook/release/21-01-02/book.pdf
 
+参考视频：https://www.bilibili.com/video/BV1q5411V7tT/?spm_id_from=333.788.videocard.10
+
 ## 环境安装 & 数据下载
 
 **安装环境：**
@@ -168,4 +170,8 @@ sudo apt-get install flac
 ![image.png](http://ww1.sinaimg.cn/large/005KJzqrgy1gpov8idsocj318208itd7.jpg)
 
 接下来尝试将data路径进行修改，同时看看哪个utt2spk文件
+
+语音会议：
+
+<img src="http://ww1.sinaimg.cn/large/005KJzqrgy1gpsnba8ombj30q207sgpo.jpg" alt="image.png" style="zoom:50%;" />
 
