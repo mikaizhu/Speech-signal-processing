@@ -115,6 +115,7 @@ def merge_vocab(pair: tuple, v_in: dict) -> dict:
 'e </w>' --> 'e\\ </w>'
 
 # 最后的匹配模式为
+# 空格就是双\\
 '(?<!\\S)e\\ </w>(?!\\S)'
 ```
 
@@ -123,6 +124,57 @@ def merge_vocab(pair: tuple, v_in: dict) -> dict:
 ```
 p.sub(''.join(pair), word)
 # 将word中满足p模式的，都替换成''.join(pair)
+```
+
+**然后介绍下这个匹配是匹配什么**：
+
+`(?<!…)`
+
+```
+匹配当前位置之前不是 ... 的样式。这个叫 negative lookbehind assertion （后视断定取非）。类似正向后视断定，包含的样式匹配必须是定长的。由 negative lookbehind assertion 开始的样式可以从字符串搜索开始的位置进行匹配
+```
+
+`(?!…)`
+
+```
+匹配 … 不符合的情况。这个叫 negative lookahead assertion （前视取反）。比如说， Isaac (?!Asimov) 只有后面 不 是 'Asimov' 的时候才匹配 'Isaac ' 。
+```
+
+所以这个正则匹配的是：
+
+```
+# 首先该正则有三个位置
+(1)2(3)
+
+# 位置1表示
+当前位置只要不是\S，都可以匹配，因为是匹配不是，所以该位置只能为空白, 只要前面是空白，就匹配位置2
+
+# 位置2
+匹配 e\\ </w>
+
+# 位置3
+只要后面不是\S,才匹配前面的位置，即只有是空白字符才匹配位置2
+
+\S是任何非空白字符
+```
+
+为什么是这样请看：https://docs.python.org/zh-cn/3/library/re.html
+
+**比如匹配：**
+
+```
+p = re.compile(r'(?<!\S)' + 't\ i' + r'(?!\S)')
+
+# 则下面都能匹配
+p.match('t i')
+p.match('t i ')
+
+# 匹配到的是
+<re.Match object; span=(0, 3), match='t i'>
+
+# 下面都不能匹配
+p.match(' t i')
+p.match('at i')
 ```
 
 可以参考：

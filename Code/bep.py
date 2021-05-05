@@ -37,12 +37,12 @@ def merge_vocab(pair: tuple, v_in: dict) -> dict:
     v_out = {}
     bigram = re.escape(' '.join(pair))
     p = re.compile(r'(?<!\S)' + bigram + r'(?!\S)')
-    
+
     for word in v_in:
         # replace most frequent pair in all vocabulary
         w_out = p.sub(''.join(pair), word) # 将word中匹配的模式，全部替换成pair
         v_out[w_out] = v_in[word]
-
+    
     return v_out
 
 corpus = 'The last few years have been an exciting time to be in the field of NLP.'
