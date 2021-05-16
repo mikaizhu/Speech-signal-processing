@@ -27,9 +27,21 @@ CONDA_TOOLS_DIR=$(dirname ${CONDA_EXE})/..
 # 注意espnet这个位置是你想安装的conda环境名字
 ./setup_anaconda.sh ${CONDA_TOOLS_DIR} espnet 3.8
 cd <espnet-root>/tools
-make TH_VERSION=1.3.1 CUDA_VERSION=10.1
+make TH_VERSION=1.8.0 CUDA_VERSION=10.1
 ```
 
 the version是pytroch对应的版本,这里使用nvcc命令查看cuda version
 
 然后开始执行程序
+
+问题记录：
+
+在我使用make命令编译的时候，出现某个模块安装不了。pep 517 build wheel fair.. failed 问题：使用pip install espnet进行安装。
+
+I solved this problem by using command below:
+
+- git clone git@github.com:facebookresearch/fairscale.git
+- cd fairscale
+- pip install -ve .
+- cd /espnet/tools
+- make TH_VERSION=1.8.0 CUDA_VERSION=10.2
