@@ -6,6 +6,13 @@
 
 因为espnet2不需要kaild，只依赖于torch，所以可以直接安装
 
+[安装步骤可以参考我自己写的shell脚本](https://github.com/mikaizhu/Notes/blob/master/Linux%26Shell_script/Shell_script/asr_config.sh)
+
+总的思路如下：
+- 使用conda安装对应版本的cudatookit
+- 按照官方教程安装
+- 如果某个模块出现编译错误，直接pip安装即可
+
 安装方法：
 
 ```
