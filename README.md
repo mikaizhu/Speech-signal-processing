@@ -1,5 +1,23 @@
 # Speech-signal-processing
 
+## 推荐教程
+
+**博客文章**:
+
+1. https://www.gushiciku.cn/pl/23wN
+
+  介绍了语音信号的基础知识，以及语音信号是怎么存储的。
+
+2. web.stanford.edu/class/cs224s/lectures/
+
+3. https://developer.aliyun.com/article/704174
+
+4. https://developer.aliyun.com/article/704173?spm=a2c6h.13262185.0.0.a74a186c77OvE4
+
+5. DFT离散傅立叶变换：https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2
+
+  因此，DFT就是先将信号在时域离散化，求其连续傅里叶变换后，再在频域离散化的结果。
+
 ## **基础教程**
 
 首先下载开源的librispeech数据：https://www.openslr.org/12，之后的实验基于这个数据做就行

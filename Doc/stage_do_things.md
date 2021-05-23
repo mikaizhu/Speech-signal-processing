@@ -8,6 +8,11 @@ Stage 2: Speed perturbation: data/${train_set} -> data/${train_set}_sp"
 - 数据增强包括对语音信号的噪声消除等
 
 Stage 3: Format wav.scp: data/ -> ${data_feats}"
+
+为什么要进行特征提取呢？可以选择直接将语音信号直接输入到模型中，但是这样会加大
+模型的训练难度，将信号由时域转换成频域，这也是人耳处理信号的方式，声学特征提取
+使得语音信息更容易暴露，可以大大降低算法优化的压力。
+
 - 因为有监督语音识别数据必须包括一一对应的语音和文本
 - wav.scp:每条语音的ID以及存储路径
 - text:每条语音的ID以及对应文本
@@ -19,6 +24,8 @@ stage 4: remove long/short data: ${data_feats}/org -> ${data_feats}"
 stage 5: generate token_list from ${bpe_train_text} using bpe"
 
 stage 6: lm collect stats: train_set=${data_feats}/lm_train.txt, dev_set=${lm_dev_text}"
+
+- lm 指的是语言模型，language model
 
 # 前面阶段都是在为模型训练进行数据准备
 
