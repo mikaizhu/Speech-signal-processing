@@ -2,6 +2,8 @@
 
 ## 常见术语介绍
 
+- [kaldi 中文手册](https://shiweipku.gitbooks.io/chinese-doc-of-kaldi/content/) 
+
 **语音的基本保存方式**：
 
 语音本来是模拟信号，通过模数转换成波形图(waveform),波形图是一个离散的时间序列，由很多个电压数值表

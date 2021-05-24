@@ -11,6 +11,8 @@ Stage 1: Data preparation for data
 
 Stage 2: Speed perturbation: data/${train_set} -> data/${train_set}_sp" 
 
+- [Speed perturbation paper](https://www.danielpovey.com/files/2015_interspeech_augmentation.pdf) 
+- [Speed perturbation 讲解](https://zhuanlan.zhihu.com/p/37958212)
 - 指的是语音数据增强,这部分代码会运行比较慢
 - 数据增强包括对语音信号的噪声消除等
 - 参考：https://blog.einstein.ai/improving-end-to-end-speech-recognition-models/
