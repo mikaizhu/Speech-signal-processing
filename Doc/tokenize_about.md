@@ -11,8 +11,15 @@
 tokenizer是一个类方法，其中可以集成分词等方法，主要功能有统计词频，然后将文本转化成
 序列。序列可以不等长，后面需要我们自己补充为等长的序列
 
+参考：
+
+- https://zhuanlan.zhihu.com/p/55412623
+
+- https://blog.floydhub.com/tokenization-nlp/
+
 TODO:
 
 - [ ] 为什么要使用tokenizer，转换成词频向量？
 
+- [ ] 在自然语言处理中，为什么要分词呢？
 
