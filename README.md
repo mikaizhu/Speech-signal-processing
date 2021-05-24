@@ -18,6 +18,8 @@
 
   因此，DFT就是先将信号在时域离散化，求其连续傅里叶变换后，再在频域离散化的结果。
 
+6. [kaldi 中文手册](https://shiweipku.gitbooks.io/chinese-doc-of-kaldi/content/) 
+
 ## **基础教程**
 
 首先下载开源的librispeech数据：https://www.openslr.org/12，之后的实验基于这个数据做就行
