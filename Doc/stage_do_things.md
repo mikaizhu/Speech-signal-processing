@@ -58,45 +58,56 @@ sp0.9-100-121669-0002 sox /media/zwl/zwl/SpeechSignalData/LibriSpeech/train-clea
 
 stage 4: remove long/short data: ${data_feats}/org -> ${data_feats}"
 
-[source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L526)
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L526)
 
 初步判断是获得语音的帧片段.
 
 stage 5: generate token_list from ${bpe_train_text} using bpe"
 
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L590)
 - 使用bpe对标签文本进行分词, 主要是生成字典
 
 
 stage 6: lm collect stats: train_set=${data_feats}/lm_train.txt, dev_set=${lm_dev_text}"
 
-- lm 指的是语言模型，language model
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L669) 
+- lm 指的是语言模型，language model,这个阶段是为语言模型训练做准备
 
 # 前面阶段都是在为模型训练进行数据准备
 
 stage 7: lm training: train_set=${data_feats}/lm_train.txt, dev_set=${lm_dev_text}"
 
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L748) 
 - 训练语言模型
 
 Stage 8: Calc perplexity: ${lm_test_text}
 
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L824) 
+
 Stage 9: ASR collect stats: train_set=${_asr_train_dir}, valid_set=${_asr_valid_dir}
+
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L847)
 
 Stage 10: ASR Training: train_set=${_asr_train_dir}, valid_set=${_asr_valid_dir}
 
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L948) 
 - 训练asr模型
 
 Stage 11: Decoding: training_dir=${asr_exp}
 
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L1094) 
 - 解码
 
 Stage 12: Scoring
 
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L1176) 
 - 打分
 
 Stage 13: Pack model: ${packed_model}
 
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L1295) 
 - 存储模型
 
 Stage 14: Upload model to Zenodo: ${packed_model}
 
-
+- [source code](https://github.com/espnet/espnet/blob/2df6913cf100a3c26d331a1187df630cb6d059ee/egs2/TEMPLATE/asr1/asr.sh#L1328) 
