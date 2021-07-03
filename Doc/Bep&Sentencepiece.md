@@ -1,5 +1,7 @@
 ## BEP介绍
 
+参考：https://wmathor.com/index.php/archives/1517/
+
 **bep又称为bytes-pair-encoding**
 
 作用：解决自然语言处理中未登陆词的一种做法，未登陆词指那些既没有出现在训练集中也没有出现在测试集中的文字或者单词。
